@@ -13,7 +13,18 @@ export class MovieTileComponent implements OnInit {
 
   ngOnInit() {}
 
-  onRentalButtonClick(movie) {
-    this.rentMovie.emit(movie);
+  onRentalButtonClick() {
+    this.rentMovie.emit(this.movie);
   }
+
+//-------------------------------
+// dont need to pass the movie because 
+// there is only 1 movie in this component
+// so use this.movie - see above method.
+// original method below...
+// ------------------------------
+//  onRentalButtonClick(movie) {
+//     this.rentMovie.emit(movie);
+//   }
+
 }
