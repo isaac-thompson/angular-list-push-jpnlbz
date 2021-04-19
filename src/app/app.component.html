@@ -8,7 +8,10 @@
   </div>
 
   <div class="card p-2 col-6">
-    <app-rental-list [rentals]="rentalList"></app-rental-list>
+    <app-rental-list 
+    [rentals]="rentalList"
+    (clearTheList)="onclearList()"
+    ></app-rental-list>
   </div>
 </div>
 

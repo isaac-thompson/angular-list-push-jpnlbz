@@ -9,9 +9,11 @@ export class MovieTileComponent implements OnInit {
   @Input() movie;
   @Output() rentMovie = new EventEmitter();
 
+
   constructor() {}
 
   ngOnInit() {}
+
 
   onRentalButtonClick() {
     this.rentMovie.emit(this.movie);
