@@ -1,0 +1,25 @@
+<h1>Flopbuster</h1>
+
+<div class="jumbotron d-flex m-1 mb-4">
+  <div class="p-2 col-6">
+    We have all the best flops in the business!
+    <br />
+    Choose a flop to rent
+  </div>
+
+  <div class="card p-2 col-6">
+    <app-rental-list [rentals]="rentalList"></app-rental-list>
+  </div>
+</div>
+
+<div style="display:flex; justify-content:space-around">
+  <app-movie-tile
+    (rentMovie)="onRentMovie($event)"
+    [movie]="wingCommander"
+  ></app-movie-tile>
+
+  <app-movie-tile
+    (rentMovie)="onRentMovie($event)"
+    [movie]="theRoom"
+  ></app-movie-tile>
+</div>
