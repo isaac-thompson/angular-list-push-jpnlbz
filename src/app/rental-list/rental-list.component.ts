@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RentalListService } from '../services/rental-list.service';
 
 @Component({
   selector: 'app-rental-list',
@@ -10,13 +11,16 @@ export class RentalListComponent implements OnInit {
 @Input() rentals ;
 @Output() clearTheList = new EventEmitter();
   
-  constructor() { }
+ constructor(public rentalListService: RentalListService){
+}
 
   ngOnInit() {
   }
 
 onClearList(){
- this.clearTheList.emit(this.rentals=[]);
+//  this.clearTheList.emit(this.rentals=[]);
+this.rentalListService.clearList();
+
 }
 
 }

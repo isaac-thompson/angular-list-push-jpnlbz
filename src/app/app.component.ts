@@ -1,14 +1,15 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { RentalListService } from './services/rental-list.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
-
-rentalList = []
+constructor(public rentalListService: RentalListService){
+}
 
   wingCommander = {
     title: "Wing Commander",
@@ -31,22 +32,10 @@ rentalList = []
 		image: "/images/the-room.jpg"
 	}
 
+
 onRentMovie(movie){
-  console.log('movie rented ' + movie.title)
-  if(!this.rentalList.includes(movie.title)){
-  this.rentalList.push(movie.title)
-  }
-  console.log(this.rentalList);
+ this.rentalListService.rentMovie(movie);
 }
-
-onclearList(){
-  this.rentalList=[];
-}
-
- ngOnInit() {
-this.rentalList = ['Cats', 'Howard the Duck', 'Jack and Jill', 'Batman and Robin']
-  }
-
 
 
 }
